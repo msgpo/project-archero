@@ -1,0 +1,5 @@
+>=media-libs/mesa-19.0-r7 wayland
+=app-emulation/lxc-2.0.8 cgmanager
+
+dev-libs/boost nls
+sys-apps/dbus -systemd
