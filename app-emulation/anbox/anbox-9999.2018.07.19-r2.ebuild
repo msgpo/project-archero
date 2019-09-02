@@ -95,12 +95,8 @@ pkg_setup() {
 	python-single-r1_pkg_setup
 }
 
-src_prepare() {
-  #epatch "${FILESDIR}"/00-without-systemd.patch
-  #epatch "${FILESDIR}"/01-std-string.patch
-  #epatch "${FILESDIR}"/02-dbus.patch
-  #epatch "${FILESDIR}"/03-x11.patch
-  epatch "${FILESDIR}"/04-haha.patch
+src_prepare() {  
+  epatch "${FILESDIR}"/00-without-dbus.patch
 
 	cmake-utils_src_prepare
 
