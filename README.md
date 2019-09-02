@@ -12,3 +12,7 @@ archero 是基于 anbox 来替换 arc++ 来实现 chromiumos 中的安卓子系�
 问题
 ---------------
 anbox-session 在启动过程中，会给系统的 lxc 发送请求，用 lxc 的接口来启动一个 anroid container，目前的问题是在 chromiumos 中 lxc 启动会使用 cgroup 控制系统资源，但是实际情况会请求失败。从而导致容器启动失败。同样的代码可以工作在 archlinux 上面，目前看了一下 chromiumos 的 cgroup 内核依赖，基本是没有问题的，但是 /sys/fs/cgroup 中的目录结构缺不太一样，导致了 lxc 调用 cgroup 找不到相关的正确路径。
+
+解决思路
+---------------
+chromiumos 本身的子系统并没有使用 lxc 的方式来启动。可以尝试使用 chromiumos 自身的方式来启动。
