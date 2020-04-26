@@ -17,11 +17,11 @@ CROS_WORKON_REPO="git://gitlab.fydeos.xyz"
 #inherit cmake-utils git-r3 linux-info python-single-r1 systemd udev versionator
 # inherit cros-workon cros-board cros-constants cmake-utils git-r3 linux-info python-single-r1 versionator
 #inherit cros-workon cmake-utils git-r3 linux-info python-single-r1 versionator
-inherit cros-workon cmake-utils linux-info python-single-r1 versionator
+inherit cros-workon git-r3 cmake-utils linux-info python-single-r1 versionator
 
 DESCRIPTION="Run Android applications on any GNU/Linux operating system"
 HOMEPAGE="https://anbox.io/"
-#EGIT_REPO_URI="git@gitlab.fydeos.xyz:arf/anbox.git"
+EGIT_REPO_URI="git@gitlab.fydeos.xyz:arf/anbox.git"
 #EGIT_COMMIT="bdfda8c2971ecf01f8fcca2e3c961f49406db7c9"
 IMG_PATH="$(get_version_component_range 2)/$(get_version_component_range 3)/$(get_version_component_range 4)"
 #IMG_REVISION="$(get_version_component_range 5)"
@@ -62,6 +62,7 @@ RDEPEND="
   chromeos-base/arc-setup
   chromeos-base/android-shell
   chromeos-base/selinux-policy
+  chromeos-base/arc-networkd
 
   dev-util/android-tools
 	net-firewall/iptables 
@@ -81,11 +82,12 @@ DEPEND="
 	dev-cpp/properties-cpp
 	dev-libs/protobuf
 	media-libs/glm
-  sys-apps/dbus     
-  sys-kernel/chromeos-kernel-4_14 	
+  sys-apps/dbus       
 	media-libs/mesa[egl,gles2]
 	sys-libs/libcap	
 "
+
+#sys-kernel/chromeos-kernel-4_14 	
 
 #sys-apps/systemd[nat]
 #chromeos-kernel-4_14
