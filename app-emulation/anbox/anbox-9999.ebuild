@@ -172,7 +172,7 @@ src_install() {
 	#newins snap/gui/icon.png anbox.png
 
 	# insinto /var/lib/anbox  
-  insinto /opt/anbox
+  insinto /opt/google/containers/anbox
 #	newins "${DISTDIR}/android_${IMG_REVISION}_amd64.img" android.img
 	newins "${DISTDIR}/android_amd64.img" android.img
   doins "${FILESDIR}"/config.json
