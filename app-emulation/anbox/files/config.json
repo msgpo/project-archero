@@ -248,7 +248,7 @@
         "nosuid",
         "ptmxmode=0666"
       ]
-    },    
+    },        
     {
       "destination": "/dev/socket",
       "type": "tmpfs",
@@ -259,7 +259,7 @@
         "nodev",
         "noexec"
       ]
-    },    
+    },
     {
       "destination": "/storage",
       "type": "tmpfs",
@@ -284,7 +284,7 @@
       "destination": "/sys",
       "type": "sysfs",
       "source": "none",
-      "options": [
+      "options": [        
         "mode=755",
         "nosuid",
         "noexec",
@@ -369,6 +369,15 @@
         "type": "c",
         "major": 10,
         "dynamicMinor": true,
+        "fileMode": 438,
+        "uid": 0,
+        "gid": 0
+      },
+      {
+        "path": "/dev/fuse",
+        "type": "c",
+        "major": 10,
+        "minor": 229,
         "fileMode": 438,
         "uid": 0,
         "gid": 0
