@@ -17,7 +17,8 @@ CROS_WORKON_REPO="git://gitlab.fydeos.xyz"
 #inherit cmake-utils git-r3 linux-info python-single-r1 systemd udev versionator
 # inherit cros-workon cros-board cros-constants cmake-utils git-r3 linux-info python-single-r1 versionator
 #inherit cros-workon cmake-utils git-r3 linux-info python-single-r1 versionator
-inherit cros-workon git-r3 cmake-utils linux-info python-single-r1 versionator
+#inherit cros-workon git-r3 cmake-utils linux-info python-single-r1 versionator
+inherit cros-workon cmake-utils linux-info python-single-r1 versionator
 
 DESCRIPTION="Run Android applications on any GNU/Linux operating system"
 HOMEPAGE="https://anbox.io/"
@@ -173,6 +174,9 @@ src_install() {
 
 	# insinto /var/lib/anbox  
   insinto /opt/google/containers/anbox
+  keepdir /opt/google/containers/anbox/rootfs
+  #/mnt/stateful_partition/var_overlay/lib/anbox
+  keepdir /var/lib/anbox
 #	newins "${DISTDIR}/android_${IMG_REVISION}_amd64.img" android.img
 	newins "${DISTDIR}/android_amd64.img" android.img
   doins "${FILESDIR}"/config.json
