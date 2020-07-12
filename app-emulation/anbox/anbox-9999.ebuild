@@ -79,6 +79,7 @@ RDEPEND="
 DEPEND="  
   ${RDEPEND}
 
+  chromeos-base/chromeos-chrome
 	dev-libs/glib:2
 	dev-cpp/properties-cpp
 	dev-libs/protobuf
