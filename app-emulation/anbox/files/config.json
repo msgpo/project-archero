@@ -302,6 +302,13 @@
       ]
     }
   ],  
+  "hooks": {
+    "prechroot": [
+			{
+				"path": "/opt/google/containers/anbox/runc_hook.sh"
+			}
+		]
+  },
   "linux": {
     "altSyscall": "android",
     "cgroupsPath": "/session_manager_containers",
