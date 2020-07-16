@@ -67,7 +67,7 @@ RDEPEND="
 
   dev-util/android-tools
 	net-firewall/iptables 
-  dev-libs/boost:=[threads]  
+  dev-libs/boost:=[threads,nls]
 "
 #media-libs/swiftshader
 #app-emulation/lxc
