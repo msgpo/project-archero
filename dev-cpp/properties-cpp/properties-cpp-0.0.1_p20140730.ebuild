@@ -18,7 +18,7 @@ else
 	MY_P="${PN}-${MY_PV}"  
 	SRC_URI="https://launchpad.net/ubuntu/+archive/primary/+files/${PN}_${MY_PV}.orig.tar.gz"      
   RESTRICT="mirror"
-	KEYWORDS="~amd64 ~arm ~arm64 ~x86"
+	KEYWORDS="amd64 ~arm ~arm64 x86"
 	S="${WORKDIR}/${MY_P}"
 fi
 
