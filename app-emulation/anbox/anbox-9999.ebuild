@@ -6,8 +6,8 @@ PYTHON_COMPAT=( python2_7 python3_6 )
 
 #CROS_WORKON_COMMIT="bdfda8c2971ecf01f8fcca2e3c961f49406db7c9"
 #CROS_WORKON_TREE="dc715afb377abbc9f3bfa8a33ea602262630e79f"
-CROS_WORKON_PROJECT="arf/anbox"
-CROS_WORKON_REPO="git://gitlab.fydeos.xyz"
+CROS_WORKON_PROJECT="FydeOS/anbox_fydeos"
+CROS_WORKON_REPO="git://github.com"
 #CROS_WORKON_LOCALNAME="anbox2"
 #CROS_WORKON_EGIT_BRANCH="master"
 #CROS_WORKON_OUTOFTREE_BUILD="1"
@@ -18,16 +18,16 @@ CROS_WORKON_REPO="git://gitlab.fydeos.xyz"
 # inherit cros-workon cros-board cros-constants cmake-utils git-r3 linux-info python-single-r1 versionator
 #inherit cros-workon cmake-utils git-r3 linux-info python-single-r1 versionator
 #inherit cros-workon git-r3 cmake-utils linux-info python-single-r1 versionator
-inherit cros-workon cmake-utils linux-info python-single-r1 versionator
+inherit git-r3 cros-workon cmake-utils linux-info python-single-r1 versionator
 
 DESCRIPTION="Run Android applications on any GNU/Linux operating system"
 HOMEPAGE="https://anbox.io/"
-EGIT_REPO_URI="git@gitlab.fydeos.xyz:arf/anbox.git"
+EGIT_REPO_URI="https://github.com/FydeOS/anbox_fydeos.git"
 #EGIT_COMMIT="bdfda8c2971ecf01f8fcca2e3c961f49406db7c9"
 IMG_PATH="$(get_version_component_range 2)/$(get_version_component_range 3)/$(get_version_component_range 4)"
 #IMG_REVISION="$(get_version_component_range 5)"
 #SRC_URI="http://build.anbox.io/android-images/${IMG_PATH}/android_${IMG_REVISION}_amd64.img"
-SRC_URI="http://build.anbox.io/android-images/${IMG_PATH}/android_amd64.img"
+#SRC_URI="http://build.anbox.io/android-images/${IMG_PATH}/android_amd64.img"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -179,7 +179,7 @@ src_install() {
   #/mnt/stateful_partition/var_overlay/lib/anbox
   keepdir /var/lib/anbox
 #	newins "${DISTDIR}/android_${IMG_REVISION}_amd64.img" android.img
-	newins "${DISTDIR}/android_amd64.img" android.img
+	newins "${FILESDIR}/android_amd64.img" android.img
   doins "${FILESDIR}"/config.json
 
 	# udev_dorules "${FILESDIR}/99-anbox.rules"
