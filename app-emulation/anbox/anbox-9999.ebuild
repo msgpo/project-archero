@@ -31,7 +31,7 @@ IMG_PATH="$(get_version_component_range 2)/$(get_version_component_range 3)/$(ge
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE="test privileged"
 RESTRICT="mirror"
 
