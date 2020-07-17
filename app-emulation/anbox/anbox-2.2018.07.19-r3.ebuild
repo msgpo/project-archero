@@ -182,6 +182,9 @@ src_install() {
 	newins "${FILESDIR}/android_amd64.img" android.img
   doins "${FILESDIR}"/config.json
 
+  exeinto /opt/google/containers/anbox
+  doexe "${FILESDIR}/runc_hook.sh"
+
 	# udev_dorules "${FILESDIR}/99-anbox.rules"
 
   insinto /etc/init
